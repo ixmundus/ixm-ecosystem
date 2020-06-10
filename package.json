@@ -1,5 +1,5 @@
 {
-  "name": "ecosystem",
+  "name": "ixm-ecosystem",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ixmundus/ecosystem.git"
+    "url": "git+https://github.com/ixmundus/ixm-ecosystem.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ixmundus/ecosystem/issues"
+    "url": "https://github.com/ixmundus/ixm-ecosystem/issues"
   },
-  "homepage": "https://github.com/ixmundus/ecosystem#readme"
+  "homepage": "https://github.com/ixmundus/ixm-ecosystem#readme",
+  "dependencies": {
+    "-": "0.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "js-yaml": "^3.14.0",
+    "needle": "^2.5.0",
+    "node-rsa": "^1.0.8",
+    "s": "^1.0.0",
+    "swagger-tools": "^0.10.4",
+    "ulid": "^2.3.0"
+  }
 }
