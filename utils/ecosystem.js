@@ -55,6 +55,7 @@ module.exports = async (keys, config) => {
                 // req.log.debug('Allowing access to ' + req.path)
                 req.auth = {
                     ecosystem_auth_token: bearer_token,
+                    config,
                     base_path: config.proxy.base_path,
                     createEntity: (actor, entity, correlation_id) => {
                         return new Promise((res, rej) => {
