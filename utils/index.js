@@ -3,5 +3,6 @@ module.exports = {
   href_generator: require('./href_generator'),
   authz: require('./authz'),
   database_provider: require('./database-mongodb'),
-  newId: require('ulid').ulid
+  newId: require('ulid').ulid,
+  template: require('./template')
 }
