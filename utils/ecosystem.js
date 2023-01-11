@@ -17,7 +17,7 @@ module.exports = async (keys, config) => {
             }
         },(err, doc) => {
             if (err || !doc.body || !doc.body.bearer_token) {
-                console.log('Failed to authenticate ecosystem', err);
+                console.log('Failed to authenticate ecosystem', err, `${config.proxy.base_path}/authn/authenticate`);
                 process.exit()
             }
             const bearer_token = doc.body.bearer_token
