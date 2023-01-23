@@ -17,7 +17,11 @@ module.exports = async (keys, config) => {
             }
         },(err, doc) => {
             if (err || !doc.body || !doc.body.bearer_token) {
-                console.log('Failed to authenticate ecosystem', err, `${config.proxy.base_path}/authn/authenticate`);
+                console.log('Failed to authenticate ecosystem', err, `${config.proxy.base_path}/authn/authenticate`, {
+                    username: config.name,
+                    payload: request,
+                    signature: keys.private.sign(request, 'base64')
+                }, doc.body);
                 process.exit()
             }
             const bearer_token = doc.body.bearer_token
@@ -74,7 +78,7 @@ module.exports = async (keys, config) => {
                         })
                     },
                     canActorAccessResource: (actor, claim, resource, correlation_id) => {
-                        // console.log({actor, claim, resource, correlation_id})
+                        console.log({actor, claim, resource, correlation_id})
                         return new Promise((res, rej) => {
                             var call = config.proxy.base_path + '/authz/entities/' + actor + '/claims/' + claim + '/' + resource;
                             needle.get(call, {
